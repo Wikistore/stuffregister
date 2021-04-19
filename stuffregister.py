@@ -25,22 +25,22 @@ def excel():
 	# resize the width of columns in 
 	# excel spreadsheet 
 	sheet.column_dimensions['A'].width = 30
-	sheet.column_dimensions['B'].width = 10
+	sheet.column_dimensions['B'].width = 30 
 	sheet.column_dimensions['C'].width = 10
-	sheet.column_dimensions['D'].width = 20
-	sheet.column_dimensions['E'].width = 20
-	sheet.column_dimensions['F'].width = 40
-	sheet.column_dimensions['G'].width = 50
+	sheet.column_dimensions['D'].width = 30
+	sheet.column_dimensions['E'].width = 30
+	sheet.column_dimensions['F'].width = 10
+	sheet.column_dimensions['G'].width = 20
 
 	# write given data to an excel spreadsheet 
 	# at particular location 
-	sheet.cell(row=1, column=1).value = "Name"
-	sheet.cell(row=1, column=2).value = "Age"
-	sheet.cell(row=1, column=3).value = "Education"
-	sheet.cell(row=1, column=4).value = "ID Card Number"
-	sheet.cell(row=1, column=5).value = "Contact Number"
-	sheet.cell(row=1, column=6).value = "Email id"
-	sheet.cell(row=1, column=7).value = "Address"
+	sheet.cell(row=1, column=1).value = "Stage Name"
+	sheet.cell(row=1, column=2).value = "Name"
+	sheet.cell(row=1, column=3).value = "Call ID"
+	sheet.cell(row=1, column=4).value = "Mail Address"
+	sheet.cell(row=1, column=5).value = "Skype ID"
+	sheet.cell(row=1, column=6).value = "Sector"
+	sheet.cell(row=1, column=7).value = "Phone Number"
 
 
 # Function to set focus (cursor) 
@@ -145,13 +145,14 @@ if __name__ == "__main__":
 	root = Tk() 
     
     # disavle resize feature
-    root.resizable(False, False)
+    # root.resizable(False, False)
 
 	# set the background colour of GUI window 
 	root.configure(background='light blue') 
+	root.resizable(False, False)
 
 	# set the title of GUI window 
-	root.title("სარეგისტრაციო ფორმა") 
+	root.title("Registration Form") 
 
 	# set the configuration of GUI window 
 	root.geometry("500x300") 
@@ -159,28 +160,28 @@ if __name__ == "__main__":
 	excel() 
 
 	# create a Form label 
-	heading = Label(root, text="სარეგისტრაციო ფორმა", bg="green", fg="white") 
+	heading = Label(root, text="Registration Form", bg="green", fg="white") 
 
 	# create a Name label 
-	name = Label(root, text="სახელი", bg="light blue") 
+	name = Label(root, text="Stage Name", bg="light blue") 
 
 	# create a age label 
-	age = Label(root, text="დაბადების თარიღი", bg="light blue") 
+	age = Label(root, text="Name", bg="light blue") 
 
 	# create a Semester label 
-	education = Label(root, text="განათლება", bg="light blue") 
+	education = Label(root, text="Call ID", bg="light blue") 
 
 	# create a Form No. lable 
-	IDcard_no = Label(root, text="ID ბარათის ნომერი", bg="light blue") 
+	IDcard_no = Label(root, text="Mail Address", bg="light blue") 
 
 	# create a Contact No. label 
-	contact_no = Label(root, text="საკონტაქტო ტელეფონი", bg="light blue") 
+	contact_no = Label(root, text="Skype ID", bg="light blue") 
 
 	# create a Email id label 
-	email_id = Label(root, text="ელ-ფოსტა", bg="light blue") 
+	email_id = Label(root, text="Sector", bg="light blue") 
 
 	# create a address label 
-	address = Label(root, text="მისამართი", bg="light blue") 
+	address = Label(root, text="Phone Number", bg="light blue") 
 
 	# grid method is used for placing 
 	# the widgets at respective positions 
@@ -246,11 +247,11 @@ if __name__ == "__main__":
 	excel() 
 
 	# create a Submit Button and place into the root window 
-	submit = Button(root, text="დადასტურება", fg="white", 
+	submit = Button(root, text="Submit", fg="white", 
 							bg="Green", command=insert) 
 	submit.grid(row=8, column=1) 
 
-	exit = Button(root, text="დახურვა",  fg="white", bg="Green", command=root.quit  )
+	exit = Button(root, text="Exit",  fg="white", bg="Green", command=root.quit  )
 	exit.grid(row=9, column=1) 
 	
 
